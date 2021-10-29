@@ -45,6 +45,10 @@
             * 実行しなおしてコントローラが正しく認識されていればOK
     * (4) サンプルプログラムを動かす
         * SteamVR/InteractionSystem/Sample/Interactions_Exampleを触ってみる
+* シリアル通信のための環境設定
+    * Project Settings/Player/Api Compatibility Level* を.NET 4.xに変更する
+
+# Scene作成
 * オブジェクトファイル準備
     * 翼オブジェクト
         * [Clara.io(angel wings)](https://clara.io/view/94bb2ae9-da6c-4d0d-9d06-b43af66d27b4)
@@ -56,8 +60,7 @@
     * ヒト型オブジェクト
         * [Unity-Chan](https://unity-chan.com/)
         * 公式サイトから.unitypackageをダウンロードしてImport
-* シリアル通信のための環境設定
-    * Project Settings/Player/Api Compatibility Level* を.NET 4.xに変更する
+
 * Scripts準備
     * 過去に作ったやつをそのままコピペ(metaFileごと持ってきて良い)
 * Scene作成

@@ -26,6 +26,7 @@ public class FollowCamera : MonoBehaviour
         // transform.position = player.position - transform.rotation * Vector3.forward * distance;
     }
 
+
     void LateUpdate()
     {
         // 水平方向の更新

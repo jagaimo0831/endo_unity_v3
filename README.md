@@ -96,7 +96,7 @@
     * hoge
 ## 3D(VR)環境
 * 内容
-    * fuga
+    * CameraRigの追加
 ## テスト環境
 * 
 

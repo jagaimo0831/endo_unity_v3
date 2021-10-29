@@ -18,12 +18,10 @@ void loop() {
   // Arudino->HapticDevice
     if(v >= 500){
       digitalWrite(gate_pin, HIGH);
-      delay(1000);
+      delay(500);
       digitalWrite(gate_pin, LOW);
-      delay(100);
-   }else if(v < 700){
+   }else if(v < 500){
       digitalWrite(gate_pin, LOW);
-      delay(100);
   }
-    delay(300);
+    delay(100);
 }

@@ -54,13 +54,14 @@
     * ヒト型オブジェクト
         * [Unity-Chan](https://unity-chan.com/)
         * Unity公式のフリーヒト型オブジェクト
+* シリアル通信のための環境設定
+    * Project Settings/Player/Api Compatibility Level* を.NET 4.xに変更する
 * Scripts準備
-    * 過去に作ったやつをそのまま
+    * 過去に作ったやつをそのままコピペ(metaFileごと持ってきて良い)
 * Scene作成
     * 2D, 3D(VR), test_env
 
-* シリアル通信のための環境設定
-    * hoge
+
 
 # Unityで使っていること
 * from overleaf

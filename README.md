@@ -48,12 +48,14 @@
 * オブジェクトファイル準備
     * 翼オブジェクト
         * [Clara.io(angel wings)](https://clara.io/view/94bb2ae9-da6c-4d0d-9d06-b43af66d27b4)
-        * ※.objと.mtlファイル両方をインポートする
+        * ※.objと.mtlファイル両方をドラッグ&ドロップする
     * terrainオブジェクト
         * [ZENRIN City Asset Series(Unity向け3D都市モデルデータ)](https://www.zenrin.co.jp/contents/product/service/3d/asset/index.html)
+            * Japanese Otaku Cityを使用中
+        * Unity Asset StoreよりImport
     * ヒト型オブジェクト
         * [Unity-Chan](https://unity-chan.com/)
-        * Unity公式のフリーヒト型オブジェクト
+        * 公式サイトから.unitypackageをダウンロードしてImport
 * シリアル通信のための環境設定
     * Project Settings/Player/Api Compatibility Level* を.NET 4.xに変更する
 * Scripts準備

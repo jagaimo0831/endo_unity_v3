@@ -52,7 +52,7 @@
 * オブジェクトファイル準備
     * 翼オブジェクト
         * [Clara.io(angel wings)](https://clara.io/view/94bb2ae9-da6c-4d0d-9d06-b43af66d27b4)
-        * ※.objと.mtlファイル両方をドラッグ&ドロップする
+        * Assets以下にファイルを作り，.objと.mtlファイル両方をドラッグ&ドロップする
     * terrainオブジェクト
         * [ZENRIN City Asset Series(Unity向け3D都市モデルデータ)](https://www.zenrin.co.jp/contents/product/service/3d/asset/index.html)
             * Japanese Otaku Cityを使用中
@@ -60,16 +60,21 @@
     * ヒト型オブジェクト
         * [Unity-Chan](https://unity-chan.com/)
         * 公式サイトから.unitypackageをダウンロードしてImport
-
 * Scripts準備
     * 過去に作ったやつをそのままコピペ(metaFileごと持ってきて良い)
+
 * Scene作成
     * skybox(背景)の変更
         * 現在はZRNAssets/Skyboxes内のSkyboxを使用中
-    * Terrain設置
-        * ZRNAssets/005339_08932_25_14/Models/PQ_Remake_AKIHABARAを使用中
-    * ヒトモデルと翼モデルの準備
-        * 
+    * Terrain設置と衝突判定
+        * Assets/ZRNAssets/005339_08932_25_14/Models/PQ_Remake_AKIHABARAを使用中
+            * PQ_Remake_AKIHABARA/PQ_GroundにMeshColliderコンポーネントをアタッチ
+    * ヒトオブジェクトと翼オブジェクトの準備
+        * ヒトオブジェクト
+            * Assets/UnityChan/Models/BoxUnityChanを使用中
+            * BoxUnityChanにRigidbodyとBoxColliderコンポーネントをアタッチ 
+        * 翼オブジェクト
+            * VirtualWingsをいい感じの場所に設置(この部分は手作業なのでもっと簡略化したい)
     * 2D, 3D(VR), test_env
 
 
@@ -79,6 +84,15 @@
 * hogehoge
 
 # その他
+* 衝突判定について
+    * > [(Qiita) UnityのRigidbodyとColliderで衝突判定](https://qiita.com/yando/items/0cd2daaf1314c0674bbe)
+        * 衝突判定を生む条件 
+            * 落下する物体
+                * 物体の形に応じた Collider
+                * 重力が設定された Rigidbody
+            * 受け止める地面
+                * 地面の形に応じた Collider
+    
 * Markdownファイルについて
     * 書き方  
         >[(Qiita) Markdown記法一覧](https://qiita.com/oreo/items/82183bfbaac69971917f)

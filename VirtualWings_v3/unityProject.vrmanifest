@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.virtualwings_v3.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\jiane\\prog\\endo_unity_v3\\VirtualWings_v3\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "VirtualWings_v3 [Testing]"
+        }
+      }
+    }
+  ]
+}

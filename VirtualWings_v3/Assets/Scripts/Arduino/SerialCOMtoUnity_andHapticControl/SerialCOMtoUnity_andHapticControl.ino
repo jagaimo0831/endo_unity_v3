@@ -23,5 +23,5 @@ void loop() {
    }else if(v < 500){
       digitalWrite(gate_pin, LOW);
   }
-    delay(100);
+    delay(1);
 }

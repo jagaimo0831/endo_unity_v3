@@ -61,6 +61,12 @@
 * Scripts準備
     * 過去に作ったやつをそのままコピペ(metaFileごと持ってきて良い)
 * Scene作成
+    * skybox(背景)の変更
+        * 現在はZRNAssets/Skyboxes内のSkyboxを使用中
+    * Terrain設置
+        * ZRNAssets/005339_08932_25_14/Models/PQ_Remake_AKIHABARAを使用中
+    * ヒトモデルと翼モデルの準備
+        * 
     * 2D, 3D(VR), test_env
 
 

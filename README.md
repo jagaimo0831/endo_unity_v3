@@ -48,7 +48,6 @@
 * シリアル通信のための環境設定
     * Project Settings/Player/Api Compatibility Level* を.NET 4.xに変更する
 
-# Scene作成
 * オブジェクトファイル準備
     * 翼オブジェクト
         * [Clara.io(angel wings)](https://clara.io/view/94bb2ae9-da6c-4d0d-9d06-b43af66d27b4)
@@ -63,20 +62,43 @@
 * Scripts準備
     * 過去に作ったやつをそのままコピペ(metaFileごと持ってきて良い)
 
-* Scene作成
-    * skybox(背景)の変更
-        * 現在はZRNAssets/Skyboxes内のSkyboxを使用中
-    * Terrain設置と衝突判定
-        * Assets/ZRNAssets/005339_08932_25_14/Models/PQ_Remake_AKIHABARAを使用中
-            * PQ_Remake_AKIHABARA/PQ_GroundにMeshColliderコンポーネントをアタッチ
-    * ヒトオブジェクトと翼オブジェクトの準備
-        * ヒトオブジェクト
-            * Assets/UnityChan/Models/BoxUnityChanを使用中
-            * BoxUnityChanにRigidbodyとBoxColliderコンポーネントをアタッチ 
-        * 翼オブジェクト
-            * VirtualWingsをいい感じの場所に設置(この部分は手作業なのでもっと簡略化したい)
-    * 2D, 3D(VR), test_env
+# Scene作成
+## 基本的な部分
+* skybox(背景)の変更
+    * 現在はZRNAssets/Skyboxes内のSkyboxを使用中
+* Terrain設置と衝突判定
+    * Assets/ZRNAssets/005339_08932_25_14/Models/PQ_Remake_AKIHABARAを使用中
+        * PQ_Remake_AKIHABARA/PQ_GroundにMeshColliderコンポーネントをアタッチ
+* ヒトオブジェクトと翼オブジェクトの準備
+    * HierarchyでCreate Emptyを行い，そこにオブジェクトを入れていく
+    * ヒトオブジェクト
+        * Assets/UnityChan/Models/BoxUnityChanを使用中
+        * BoxUnityChanにRigidbodyとBoxColliderコンポーネントをアタッチ 
+        * カメラの位置を顔の場所に設置
+    * 翼オブジェクト
+        * VirtualWingsをいい感じの場所に設置(この部分は手作業なのでもっと簡略化したい)
+    * それぞれの相対位置
+        * hoge
 
+* Serial通信準備
+    * Create Emptyで空オブジェクトを作り，SerialHandlerとリネーム
+    * SerialHandler.csファイルをアタッチ
+
+
+編集途中
+* VirtualWingsオブジェクトにFollowCanera.cs, PlayerMoveByxxx.csをアタッチする
+
+
+    
+
+## 2D環境
+* 内容
+    * hoge
+## 3D(VR)環境
+* 内容
+    * fuga
+## テスト環境
+* 
 
 
 # Unityで使っていること

@@ -38,7 +38,7 @@ public class MoveWingsLeft_serial : MonoBehaviour {
     //sinの宣言
     private float sin;
 
-    [SerializeField] private int threshold = 600;
+    [SerializeField] private int threshold = 500;
 
     
 

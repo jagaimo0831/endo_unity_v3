@@ -10,6 +10,9 @@ public class playerMoveByEMG : MonoBehaviour {
 
     [SerializeField] public float YSpeed = 0.1f;
 
+    [SerializeField] private int threshold = 500;
+
+
 	void Start () {
 		// シリアル通信関連
             //信号を受信したときに、そのメッセージの処理を行う
@@ -27,7 +30,7 @@ public class playerMoveByEMG : MonoBehaviour {
             int message2 = int.Parse(message);
 
             // 筋電値が一定以上超えたら動作
-            if(message2 > 600){
+            if(message2 > threshold){
                 var pos = transform.position;
                 pos += transform.forward * YSpeed;
                 transform.position = pos;

@@ -12,12 +12,33 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
-  //int v = analogRead(0); //0pinに来る値を読む(MyoWareの値)
   /*
-   *  Serial.println(val, format)...ASCII形式でデータをシリアルポートへ出力．データの最後の改行が付けられる．
-   */
-  Serial.println(700);  
+  //とりあえず固定値をずっと送るやつ
+  Serial.println(700);  //Serial.println(val, format)...ASCII形式でデータをシリアルポートへ出力．データの最後の改行が付けられる．
   delay(100);
+  */
+
+  //時間によって送る値が変わるやつ  
+  int data; //MyoWareの値を想定(0~Vs[V]の間を出力 Vs:供給電圧)
+  data = 0;
+  
+  while(data <= 980){
+    Serial.println(data);
+    delay(100);
+    data = data + 5;
+  }
+
+  delay(500);
+
+  data = 980;
+  while (data >= 0) {
+    Serial.println(data);
+    delay(100);
+    data = data - 5;
+  }
+
+  delay(500);
+  
  
  
 }

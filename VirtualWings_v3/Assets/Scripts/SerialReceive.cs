@@ -12,19 +12,6 @@ public class SerialReceive : MonoBehaviour {
 	public SerialHandler serialHandler;
 	public Text text;
 
-	[SerializeField] private int threshold = 600;
-
-	// Use this for initialization
-	void Start () {
-		//信号を受信したときに、そのメッセージの処理を行う
-		serialHandler.OnDataReceived += OnDataReceived;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	//シリアルを受け取った時の処理
 	void OnDataReceived(string message) {
 		try {
@@ -39,5 +26,18 @@ public class SerialReceive : MonoBehaviour {
 		} catch (System.Exception e) {
 			Debug.LogWarning(e.Message);
 		}
+	}
+
+	[SerializeField] private int threshold = 600;
+
+	// Use this for initialization
+	void Start () {
+		//信号を受信したときに、そのメッセージの処理を行う
+		serialHandler.OnDataReceived += OnDataReceived;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
 	}
 }

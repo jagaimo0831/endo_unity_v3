@@ -5,25 +5,10 @@ using UnityEngine.UI;
 
 public class playerMoveByEMG : MonoBehaviour {
 
-	// シリアル通信のためのsomething
-        public SerialHandler serialHandler;
-
-    [SerializeField] public float YSpeed = 0.1f;
-
-    [SerializeField] private int threshold = 500;
-
-
-	void Start () {
-		// シリアル通信関連
-            //信号を受信したときに、そのメッセージの処理を行う
-            serialHandler.OnDataReceived += OnDataReceived;
-	}
-	
-
-	void Update () {  
-    }
-
+    
     // シリアルを受け取った時の処理
+    /*
+    //筋電値を閾値によって分けて挙動を制御(デジタル)
 	void OnDataReceived(string message) {
 		try {
             // string型をint型にキャスト？<- 代入するため
@@ -39,7 +24,32 @@ public class playerMoveByEMG : MonoBehaviour {
 			Debug.LogWarning(e.Message);
 		}
 	}
+    */
 
+    //筋電値(力)に比例した力を与える(アナログ)
+    void OnDataReceivedAnalog(string message){
+        try{
+            int message2 = int.Parse(message);
+            GetComponent<Rigidbody>().AddRelativeForce(0,message2/YForce,message2/ZForce);  // アタッチされているオブジェクトに力を加える
+        }catch(System.Exception e){
+            Debug.LogWarning(e.Message);
+        }
+    }
 
+	// シリアル通信のためのsomething
+    public SerialHandler serialHandler;
+
+    [SerializeField] public float YForce = 0.1f;
+    [SerializeField] public float ZForce = 0.1f;
+    
+    //[SerializeField] public float YSpeed = 0.1f;
+    //[SerializeField] private int threshold = 500; //筋電値がこの値を超えたら一定速度で進む(物理が無いと起用)
+	void Start () {
+        // シリアル通信関連:信号を受信したときに、そのメッセージの処理を行う
+        serialHandler.OnDataReceived += OnDataReceivedAnalog;
+	}
+
+	void Update () {  
+    }
 }
 

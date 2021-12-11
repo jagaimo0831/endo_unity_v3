@@ -12,12 +12,25 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
+
   /*
   //とりあえず固定値をずっと送るやつ
   Serial.println(700);  //Serial.println(val, format)...ASCII形式でデータをシリアルポートへ出力．データの最後の改行が付けられる．
   delay(100);
   */
 
+  //ぐぐぐって送ってちょっと休むやつ
+  int time;
+  time = 0;
+  while(time <= 5){
+    Serial.println(700);
+    delay(100);
+    time = time + 1;
+  }
+  delay(2000);
+  
+
+  /*
   //時間によって送る値が変わるやつ  
   int data; //MyoWareの値を想定(0~Vs[V]の間を出力 Vs:供給電圧)
   data = 0;
@@ -38,7 +51,5 @@ void loop() {
   }
 
   delay(500);
-  
- 
- 
+  */
 }

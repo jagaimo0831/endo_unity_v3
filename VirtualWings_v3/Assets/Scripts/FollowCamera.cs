@@ -1,6 +1,8 @@
 ﻿// 参考 https://sasanon.hatenablog.jp/entry/2017/09/17/041612
 // カメラの追従
 
+// キーボードマウスでの移動時に使用(w/PlayerMoveByWASD.cs)
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -45,7 +45,7 @@ public class playerMoveByEMG : MonoBehaviour {
     public SerialHandler serialHandler;
 
     [SerializeField] public float span = 0.01f;
-    [SerializeField] public float delta = 0;
+    private float delta = 0;
     [SerializeField] public float YForce = 0.1f;
     [SerializeField] public float ZForce = 0.1f;
     

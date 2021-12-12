@@ -29,8 +29,13 @@ public class playerMoveByEMG : MonoBehaviour {
     //筋電値(力)に比例した力を与える(アナログ)
     void OnDataReceivedAnalog(string message){
         try{
+            this.delta += Time.deltaTime;
             int message2 = int.Parse(message);
-            GetComponent<Rigidbody>().AddRelativeForce(0,message2/YForce,message2/ZForce);  // アタッチされているオブジェクトに力を加える
+            if (this.delta > this.span) {
+                this.delta = 0;
+                GetComponent<Rigidbody>().AddRelativeForce(0,message2/YForce,message2/ZForce);  // アタッチされているオブジェクトに力を加える
+            }
+            
         }catch(System.Exception e){
             Debug.LogWarning(e.Message);
         }
@@ -39,6 +44,8 @@ public class playerMoveByEMG : MonoBehaviour {
 	// シリアル通信のためのsomething
     public SerialHandler serialHandler;
 
+    [SerializeField] public float span = 0.01f;
+    [SerializeField] public float delta = 0;
     [SerializeField] public float YForce = 0.1f;
     [SerializeField] public float ZForce = 0.1f;
     

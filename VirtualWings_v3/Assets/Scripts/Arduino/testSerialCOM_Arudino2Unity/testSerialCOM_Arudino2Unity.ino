@@ -23,7 +23,7 @@ void loop() {
   int time;
   time = 0;
   while(time <= 5){
-    Serial.println(700);
+    Serial.println(600);
     delay(100);
     time = time + 1;
   }

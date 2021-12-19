@@ -33,7 +33,8 @@ public class playerMoveByEMG : MonoBehaviour {
             int message2 = int.Parse(message);
             if (this.delta > this.span) {
                 this.delta = 0;
-                GetComponent<Rigidbody>().AddRelativeForce(0,message2/YForce,message2/ZForce);  // アタッチされているオブジェクトに力を加える
+                this.force = 1024 - Mathf.Exp(-1*message2); // message2が1024に近づくほど増加率が減る．サチる．
+                GetComponent<Rigidbody>().AddRelativeForce(0,force/YForceDiv,force/ZForceDiv);  // アタッチされているオブジェクトに力を加える
             }
             
         }catch(System.Exception e){
@@ -46,8 +47,10 @@ public class playerMoveByEMG : MonoBehaviour {
 
     [SerializeField] public float span = 0.01f;
     private float delta = 0;
-    [SerializeField] public float YForce = 0.1f;
-    [SerializeField] public float ZForce = 0.1f;
+    private float force = 0;
+    
+    [SerializeField] public float YForceDiv = 1.0f;
+    [SerializeField] public float ZForceDiv = 1.0f;
     
     //[SerializeField] public float YSpeed = 0.1f;
     //[SerializeField] private int threshold = 500; //筋電値がこの値を超えたら一定速度で進む(物理が無いと起用)

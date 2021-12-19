@@ -789,28 +789,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1513759183}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1633466266 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4092db5ec99335f48bc53fb3efdf5883,
-    type: 3}
-  m_PrefabInstance: {fileID: 1705628832}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1633466267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633466266}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0668180032671c4d8b47ab8210c05b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _center: {x: 0, y: 0, z: 0}
-  _axis: {x: 0, y: 1, z: 0}
-  _period: 2
-  _angle: 70
 --- !u!1001 &1705628832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1017,9 +995,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serialHandler: {fileID: 166113999}
-  span: 0.01
-  YForce: 320
-  ZForce: 900
+  span: 0.05
+  YForceDiv: 600
+  ZForceDiv: 400
 --- !u!1001 &1944403774
 PrefabInstance:
   m_ObjectHideFlags: 0

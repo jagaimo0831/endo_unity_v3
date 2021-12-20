@@ -26,14 +26,24 @@ public class playerMoveByEMG : MonoBehaviour {
 	}
     */
 
+
     //筋電値(力)に比例した力を与える(アナログ)
+    
     void OnDataReceivedAnalog(string message){
         try{
             this.delta += Time.deltaTime;
             int message2 = int.Parse(message);
             if (this.delta > this.span) {
                 this.delta = 0;
-                this.force = 1024 - Mathf.Exp(-1*message2); // message2が1024に近づくほど増加率が減る．サチる．
+                //float force = 1024*((Mathf.Exp(message2/1024) - Mathf.Exp(-message2/1024)) / (Mathf.Exp(message2/1024) + Mathf.Exp(-message2/1024)));
+                // message2が1024に近づくほど増加率が減る．サチる．1024*tanh(x/1024)
+                //this.force = 1024 * Mathf.Atan(message2/1024);
+                if(message2 <= 600) {
+                    this.force = message2;
+                } else if (message2 > 600) {
+                    this.force = 600;
+                } 
+                Debug.Log(force);
                 GetComponent<Rigidbody>().AddRelativeForce(0,force/YForceDiv,force/ZForceDiv);  // アタッチされているオブジェクトに力を加える
             }
             
@@ -47,6 +57,7 @@ public class playerMoveByEMG : MonoBehaviour {
 
     [SerializeField] public float span = 0.01f;
     private float delta = 0;
+
     private float force = 0;
     
     [SerializeField] public float YForceDiv = 1.0f;
@@ -59,7 +70,7 @@ public class playerMoveByEMG : MonoBehaviour {
         serialHandler.OnDataReceived += OnDataReceivedAnalog;
 	}
 
-	void Update () {  
+	void Update () {
     }
 }
 

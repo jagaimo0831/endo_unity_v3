@@ -32,7 +32,7 @@ void loop() {
     delay(100);
     strength = strength - 5;
   }
-
   delay(500);
+
   
 }

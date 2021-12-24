@@ -1,4 +1,8 @@
 // 触覚提示：振動(偏心モータ)
+const int IN1 = 5;
+const int IN2 = 6;
+const int ST = 3;
+
 
 void setup() {
   // シリアル通信のbps
@@ -28,5 +32,31 @@ void loop() {
       // とりあえず正転
       analogWrite( IN1, 255 );
       analogWrite( IN2, 0 );
-      analogWrite( ST, 255 );
+      analogWrite( ST, 255 ); //強さ?
+
+      if(EMG <= 100){
+          analogWrite( IN1, 255 );
+          analogWrite( IN2, 0 );
+          analogWrite( ST, 0 );
+      } else if((EMG>100) && (EMG<=275)){
+          analogWrite( IN1, 255 );
+          analogWrite( IN2, 0 );
+          analogWrite( ST, 50 );
+      } else if((EMG>275) && (EMG<=450)){
+          analogWrite( IN1, 255 );
+          analogWrite( IN2, 0 );
+          analogWrite( ST, 100);
+      } else if((EMG>450) && (EMG<=625)){
+          analogWrite( IN1, 255 );
+          analogWrite( IN2, 0 );
+          analogWrite( ST, 150 );
+      } else if((EMG>625) && (EMG<=800)){
+          analogWrite( IN1, 255 );
+          analogWrite( IN2, 0 );
+          analogWrite( ST, 200 );
+      } else if((EMG>800) && (EMG<=1024)){
+          analogWrite( IN1, 255 );
+          analogWrite( IN2, 0 );
+          analogWrite( ST, 255 );
+      }
 }

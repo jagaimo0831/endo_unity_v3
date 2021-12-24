@@ -34,18 +34,22 @@ void loop() {
 
       if(EMG <= 100){
           analogWrite(3, 0);
-      } else if((EMG>100) && (EMG<=275)){
-          analogWrite(3, 30);
+      } else if((EMG>100) && (EMG<=150)){ 
+          analogWrite(3, 0);
+      } else if ((EMG>150) && (EMG<=275)){
+          analogWrite(3, 5);
+//    } else if((EMG>100) && (EMG<=275)){
+//          analogWrite(3, 5);
       } else if((EMG>275) && (EMG<=450)){
-          analogWrite(3, 60);
+          analogWrite(3, 10);
       } else if((EMG>450) && (EMG<=625)){
-          analogWrite(3, 90);
+          analogWrite(3, 15);
       } else if((EMG>625) && (EMG<=800)){
-          analogWrite(3, 120);
+          analogWrite(3, 20);
       } else if((EMG>800) && (EMG<=1024)){
-          analogWrite(3, 153);
+          analogWrite(3, 25);
       }
-      delay(1000);
+      delay(3000);
 
 
       /* 段々強く，段々弱くのコード
@@ -70,7 +74,8 @@ void loop() {
       */
 
       // スイッチOFF(リレースイッチング)
+      analogWrite(3, 0);
       digitalWrite(2, LOW);
-      delay(150);  
+      delay(3000);  
       
 }

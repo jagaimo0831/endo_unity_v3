@@ -30,10 +30,12 @@ void loop() {
        */
 
       // とりあえず正転
-      analogWrite( IN1, 255 );
-      analogWrite( IN2, 0 );
-      analogWrite( ST, 255 ); //強さ?
+      //analogWrite( IN1, 255 );
+      //analogWrite( IN2, 0 );
+      //analogWrite( ST, 255 ); //強さ?
 
+      
+      
       if(EMG <= 100){
           analogWrite( IN1, 255 );
           analogWrite( IN2, 0 );
@@ -41,19 +43,27 @@ void loop() {
       } else if((EMG>100) && (EMG<=275)){
           analogWrite( IN1, 255 );
           analogWrite( IN2, 0 );
-          analogWrite( ST, 50 );
+          analogWrite( ST, 60 );
+          
+          //analogWrite( ST, 100 );
       } else if((EMG>275) && (EMG<=450)){
           analogWrite( IN1, 255 );
           analogWrite( IN2, 0 );
-          analogWrite( ST, 100);
+          //analogWrite( ST, 100);
+          
+          analogWrite( ST, 180 );
       } else if((EMG>450) && (EMG<=625)){
           analogWrite( IN1, 255 );
           analogWrite( IN2, 0 );
-          analogWrite( ST, 150 );
+          //analogWrite( ST, 150 );
+          
+          analogWrite( ST, 255 );
       } else if((EMG>625) && (EMG<=800)){
           analogWrite( IN1, 255 );
           analogWrite( IN2, 0 );
-          analogWrite( ST, 200 );
+          //analogWrite( ST, 200 );
+          
+          analogWrite( ST, 255 );
       } else if((EMG>800) && (EMG<=1024)){
           analogWrite( IN1, 255 );
           analogWrite( IN2, 0 );

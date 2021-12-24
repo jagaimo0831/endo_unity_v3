@@ -38,10 +38,10 @@ public class playerMoveByEMG : MonoBehaviour {
                 //float force = 1024*((Mathf.Exp(message2/1024) - Mathf.Exp(-message2/1024)) / (Mathf.Exp(message2/1024) + Mathf.Exp(-message2/1024)));
                 // message2が1024に近づくほど増加率が減る．サチる．1024*tanh(x/1024)
                 //this.force = 1024 * Mathf.Atan(message2/1024);
-                if(message2 <= 600) {
+                if(message2 <= 800) {
                     this.force = message2;
-                } else if (message2 > 600) {
-                    this.force = 600;
+                } else if (message2 > 800) {
+                    this.force = 800;
                 } 
                 Debug.Log(force);
                 GetComponent<Rigidbody>().AddRelativeForce(0,force/YForceDiv,force/ZForceDiv);  // アタッチされているオブジェクトに力を加える

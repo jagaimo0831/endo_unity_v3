@@ -18,7 +18,7 @@ void loop() {
       
       // 読み取った値をUnityへ送信(シリアル通信)
       Serial.println(EMG);
-      delay(200);
+      delay(100);
 
   // 触覚提示
       // スイッチON(リレーのスイッチング)
@@ -49,7 +49,7 @@ void loop() {
       } else if((EMG>800) && (EMG<=1024)){
           analogWrite(3, 25);
       }
-      delay(3000);
+      delay(1000);
 
 
       /* 段々強く，段々弱くのコード
@@ -76,6 +76,6 @@ void loop() {
       // スイッチOFF(リレースイッチング)
       analogWrite(3, 0);
       digitalWrite(2, LOW);
-      delay(3000);  
+      delay(100);  
       
 }

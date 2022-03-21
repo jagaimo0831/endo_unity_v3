@@ -30,26 +30,26 @@ void loop() {
   delay(2000);
   
 
-  /*
-  //時間によって送る値が変わるやつ  
-  int data; //MyoWareの値を想定(0~Vs[V]の間を出力 Vs:供給電圧)
-  data = 0;
   
-  while(data <= 980){
-    Serial.println(data);
-    delay(100);
-    data = data + 5;
-  }
-
-  delay(500);
-
-  data = 980;
-  while (data >= 0) {
-    Serial.println(data);
-    delay(100);
-    data = data - 5;
-  }
-
-  delay(500);
-  */
+  //時間によって送る値が変わるやつ  
+//  int data; //MyoWareの値を想定(0~Vs[V]の間を出力 Vs:供給電圧)
+//  data = 0;
+//  
+//  while(data <= 750){
+//    Serial.println(data);
+//    delay(100);
+//    data = data + 10;
+//  }
+//
+//  delay(100);
+//
+//  data = 750;
+//  while (data >= 150) {
+//    Serial.println(data);
+//    delay(50);
+//    data = data - 5;
+//  }
+//
+//  delay(100);
+//  
 }

@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfd388b7d66372498c579bd1d8493be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serialHandler: {fileID: 0}
+  serialHandler: {fileID: 166113999}
   _center: {x: 0, y: 0, z: 0}
   _axis: {x: 0, y: 1, z: 0}
   _angle: 240
@@ -925,7 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd93780b1dcee184f967914240ed3e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serialHandler: {fileID: 0}
+  serialHandler: {fileID: 166113999}
   _center: {x: 0, y: 0, z: 0}
   _axis: {x: 0, y: 1, z: 0}
   _angle: 240
@@ -1042,8 +1042,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serialHandler: {fileID: 166113999}
   span: 0.01
-  YForceDiv: 1
-  ZForceDiv: 1
+  YForceDiv: 500
+  ZForceDiv: 500
 --- !u!1001 &1944403774
 PrefabInstance:
   m_ObjectHideFlags: 0
